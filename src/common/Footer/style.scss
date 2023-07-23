@@ -1,0 +1,88 @@
+@import "../../utils/rules.scss";
+
+.footer {
+    // CTA button animation
+    .button-animation {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 18px;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .button-animation:hover {
+        transform: scale(1.1);
+    }
+
+    background-color: #000018;
+    color: $greyColor;
+    .desc {
+        margin: 40px 0;
+    }
+
+    h4 {
+        font-weight: 400;
+        color: #fff;
+    }
+
+    ul {
+        margin-top: 20px;
+    }
+    li {
+        gap: 15px;
+        display: flex;
+        align-items: flex-start;
+        margin: 10px 0;
+        i {
+            color: $mainColor;
+        }
+    }
+    a {
+        color: $greyColor;
+        text-decoration: none;
+        margin: 5px 0;
+        transition: 0.5s;
+    }
+
+    img {
+        margin: 5px;
+    }
+    button.contact {
+        padding: 12px 29px;
+        @include mainBtn;
+        margin-bottom: 30px;
+    }
+    .form-fields {
+        position: relative;
+        input {
+            border: 1px solid #fff;
+            border-radius: 28px;
+            position: relative;
+            background-color: transparent;
+            width: 100%;
+            padding: 10px 14px;
+        }
+        i {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+    }
+    .bottom {
+        width: 100%;
+        color: #fff;
+        background-color: $mainColor;
+        font-size: 16px;
+        line-height: 21px;
+        font-weight: 400;
+    }
+}
+
+.footer a:hover {
+    font-size: 18px;
+    color: #fff;
+    transform: translateX(10px);
+}

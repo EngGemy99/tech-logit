@@ -1,0 +1,54 @@
+@import "../../utils/rules.scss";
+
+.corner-contact {
+    position: fixed;
+    right: 10px;
+    bottom: 0;
+    z-index: 1;
+    transition: all 0.4s;
+    li {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        text-align: center;
+        padding: 10px;
+        margin: 10px 0;
+        background-color: transparent;
+        outline: 2px solid transparent;
+        border: 2px solid $mainColor;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s;
+        cursor: pointer;
+        &:hover {
+            border-color: #000;
+            a {
+                background-color: #000;
+            }
+        }
+        a {
+            color: #fff;
+            background-color: $mainColor;
+            border-radius: 50%;
+            padding: 8px;
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.4s;
+            text-decoration: none;
+            svg {
+                width: 15px;
+                height: 15px;
+            }
+            &:hover {
+                background-color: #000;
+            }
+        }
+    }
+    &.active {
+        bottom: -150px;
+        opacity: 0;
+    }
+}

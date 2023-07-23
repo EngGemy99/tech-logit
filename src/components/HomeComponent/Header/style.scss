@@ -1,0 +1,550 @@
+@import "../../../utils/rules.scss";
+body {
+    min-width: 360px;
+    height: auto !important;
+}
+#root {
+    overflow: hidden;
+}
+.hero {
+    position: relative;
+    color: #fff;
+
+    background-color: #011836;
+    @keyframes bounce {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+    .social-icons {
+        position: relative;
+        animation: bounce 4s infinite;
+    }
+
+    .callToAction {
+        animation: fadeAnimation 2s infinite;
+    }
+
+    @keyframes fadeAnimation {
+        0%,
+        100% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+    }
+    //   till here
+
+    img {
+        display: block;
+        margin-left: auto;
+    }
+    .heroparticles {
+        background-repeat: no-repeat;
+        background-size: cover;
+        // background-color: #011836;
+        min-height: 790px;
+    }
+
+    .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+
+        .intro {
+            position: absolute;
+            top: 100px;
+            font-size: 25px;
+            line-height: 56.68px;
+
+            h2 {
+                margin-bottom: 18px;
+                font-size: 40px;
+                font-weight: 700;
+                line-height: 57px;
+                letter-spacing: 0em;
+                text-align: left;
+            }
+
+            h4 {
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 32px;
+                letter-spacing: 0em;
+                text-align: left;
+                margin-bottom: 50px;
+            }
+
+            .started {
+                @include mainBtn;
+                font-size: 18px;
+                padding: 0px 31px;
+                line-height: 3;
+            }
+        }
+    }
+
+    .left,
+    .right {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(0%);
+        bottom: 0;
+
+        .social {
+            display: flex;
+            flex-direction: column;
+            display: flex;
+            flex-direction: column;
+            max-width: 59px;
+            padding: 0;
+            right: 20px;
+            position: absolute;
+            top: -50px;
+
+            a {
+                color: #fff;
+
+                .icon {
+                    margin: 10px;
+                    font-size: 20px;
+                    transition: all 0.4s;
+
+                    &:hover {
+                        color: $mainColor;
+                    }
+                }
+            }
+        }
+
+        .mail {
+            text-transform: uppercase;
+            transform: rotate(-90deg);
+            position: absolute;
+            right: -23px;
+            bottom: 118px;
+            font-size: 13px;
+            transition: all 0.4s;
+            cursor: pointer;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -7px;
+                left: -27px;
+                width: 2px;
+                height: 37px;
+                background: #fff;
+                transform: rotate(90deg);
+            }
+
+            &:hover {
+                color: $mainColor;
+            }
+        }
+    }
+
+    .right {
+        left: -13px;
+        transform: rotate(90deg);
+        width: -moz-fit-content;
+        width: fit-content;
+        bottom: 109px !important;
+        top: auto;
+        cursor: pointer;
+        font-size: 13px;
+        transition: all 0.4s;
+
+        &:hover {
+            color: $mainColor;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -7px;
+            width: 2px;
+            height: 37px;
+            background: #fff;
+            transform: rotate(90deg);
+            right: -27px;
+        }
+    }
+}
+
+// scrollup-animation
+.scrollAnimation,
+.loadAnimation {
+    opacity: 1;
+    transform: translateY(50px);
+    transition:
+        opacity 0.5s ease-out,
+        transform 0.5s ease-out;
+}
+
+.scrollAnimation.reveal,
+.loadAnimation.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+//   scrolldown animation
+.scrollDownAnimation {
+    opacity: 1;
+    transform: translateY(-50px);
+    transition:
+        opacity 0.5s ease-out,
+        transform 0.5s ease-out;
+}
+
+.scrollDownAnimation.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 1200px) {
+    .hero {
+        .left,
+        .right {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .heroparticles {
+        min-height: 500px !important;
+        height: 830px !important;
+        canvas {
+            height: 100% !important;
+            width: 100% !important;
+        }
+    }
+    .hero .heroparticles {
+        height: 856px !important;
+        min-height: 500px !important;
+    }
+    .hero .container {
+        text-align: center;
+        .intro {
+            position: static;
+            .h2 {
+                margin-bottom: 20px;
+                font-size: 25px;
+                text-align: center;
+                margin-top: 100px;
+                line-height: 1.5;
+            }
+
+            .h4 {
+                text-align: center;
+                font-size: 15px;
+                font-weight: 400;
+                line-height: 20px;
+            }
+        }
+
+        img {
+            width: 60%;
+            margin: 35px auto;
+        }
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .hero .container {
+        .intro {
+            top: -100px;
+        }
+        img {
+            width: 60%;
+        }
+    }
+}
+.mob {
+    display: none;
+}
+.contentside {
+    padding: 11px 18px 18px 18px !important;
+}
+@media (max-width: 992px) {
+    .desk {
+        display: none !important;
+    }
+    .mob {
+        display: block;
+    }
+    .hero .container .intro h2 {
+        padding-top: 75px !important;
+        font-size: 22px;
+        line-height: 31px;
+    }
+    .hero .container .intro h4 {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 35px;
+    }
+    .navbar,
+    .hero,
+    .projects-items,
+    .about,
+    .portfolio,
+    .companies,
+    .GetinTouch {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    .hero .container .intro {
+        padding-left: 10px;
+    }
+    .section-title .header span {
+        font-size: 22px !important;
+        line-height: 28px !important;
+    }
+    .services .services-items .service .bottom .title {
+        font-size: 14px !important;
+        line-height: 20px !important;
+        margin: 5px 0 15px 0 !important;
+    }
+    .projects .project .bottom .title {
+        font-size: 18px !important;
+        line-height: 23px !important;
+        margin-bottom: 8px !important;
+    }
+    .services .services-items .service .bottom .desc {
+        font-size: 12px !important;
+        line-height: 20px !important;
+        margin: 10px 0 15px !important;
+    }
+    .projects .project .bottom .desc,
+    .portfolio .desc {
+        font-size: 14px !important;
+        line-height: 24px !important;
+    }
+    .portfolio .shuffle-details .item .title {
+        font-size: 14px !important;
+        line-height: 18px !important;
+    }
+    .portfolio .shuffle-details .item .item-desc {
+        font-size: 18px !important;
+        line-height: 24px !important;
+    }
+    .portfolio .shuffle-items ul li {
+        font-size: 14px !important;
+        line-height: 19px !important;
+        padding: 10px 22px !important;
+    }
+    .portfolio .shuffle-items ul {
+        gap: 10px !important;
+        margin-bottom: 50px !important;
+    }
+    .projects .project .bottom {
+        margin: 20px 0 20px 0 !important;
+    }
+    .portfolio .shuffle-details .item .item-btn {
+        padding: 10px 19px !important;
+        font-size: 14px !important;
+        line-height: 19px !important;
+    }
+    .services .services-items .service .bottom button {
+        padding: 3px 15px !important;
+        font-size: 12px !important;
+        line-height: 25px !important;
+        display: flex;
+        align-items: center;
+        gap: 9px;
+    }
+    .services .services-items .service .bottom {
+        padding: 15px 24px 24px 24px !important;
+    }
+    .project {
+        margin: 0 auto !important;
+    }
+
+    .img-container {
+        min-width: 73px;
+    }
+    .about .info .title {
+        margin-bottom: 10px !important;
+        font-size: 22px !important;
+        text-align: center;
+        line-height: 29px !important;
+    }
+    .about .info p {
+        line-height: 24px !important;
+        font-size: 14px !important;
+        margin-bottom: 16px !important;
+        text-align: center;
+    }
+    .about .info .about-btn {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 40px;
+        margin-top: 14px;
+    }
+    .owl-carousel .slide-item .desc {
+        font-size: 12px !important;
+        line-height: 19px !important;
+        margin: 8px 0 22px 0 !important;
+    }
+    .owl-carousel .slide-item .name {
+        font-size: 14px !important;
+        line-height: 10px !important;
+        margin-bottom: 9px !important;
+    }
+    .owl-carousel .slide-item .jobtitle {
+        font-size: 12px !important;
+        line-height: 9px !important;
+    }
+    .contentside {
+        padding: 11px 18px 18px 18px !important;
+    }
+    .css-ryrseu-MuiRating-root {
+        font-size: 12px !important;
+    }
+    .owl-carousel .slide-item {
+        margin: 0 !important;
+    }
+    // .owl-carousel .slide-item img{
+    //     max-height: 170px;
+    // }
+    .companies .section .card .card-title {
+        font-size: 18px !important;
+        line-height: 16px !important;
+    }
+    .companies .section .card .card-text {
+        font-size: 14px !important;
+        line-height: 20px !important;
+    }
+
+    .GetinTouch .left h2 {
+        font-size: 18px !important;
+        line-height: 30px !important;
+        margin-bottom: 8px !important;
+    }
+    .GetinTouch .left .desc {
+        font-size: 14px !important;
+        line-height: 18px !important;
+        margin-bottom: 42px !important;
+    }
+    ul .info {
+        font-size: 14px !important;
+        line-height: 21px !important;
+    }
+
+    .GetinTouch .left ul li img {
+        max-width: 16px !important;
+        margin: 16px;
+    }
+    .GetinTouch .left ul {
+        margin-bottom: 43px !important;
+    }
+    .GetinTouch .left .social svg {
+        padding: 5px !important;
+    }
+    .form-item label {
+        font-size: 16px !important;
+        line-height: 24px !important;
+    }
+    .GetinTouch .right .form .form-field .submit {
+        font-size: 13px !important;
+        line-height: 19px !important;
+        padding: 10px 23px !important;
+    }
+    .GetinTouch {
+        padding-bottom: 55px !important;
+    }
+
+    .footer .desc {
+        font-size: 14px !important;
+        line-height: 19px !important;
+        margin: 20px 0 25px 0 !important;
+    }
+    .footer button.contact {
+        font-size: 13px !important;
+        line-height: 19px !important;
+        padding: 10px 23px !important;
+    }
+    .footer h4 {
+        font-size: 18px !important;
+        line-height: 23px !important;
+    }
+
+    .footer a {
+        font-size: 14px !important;
+        line-height: 32px !important;
+    }
+
+    .footer .form-fields input::placeholder {
+        font-size: 14px !important;
+        line-height: 19px !important;
+    }
+    .footer .bottom {
+        font-size: 12px !important;
+        line-height: 16px !important;
+        padding: 10px !important;
+    }
+
+    @media (max-width: 767px) {
+        .about .row,
+        .companies > .row {
+            flex-direction: column-reverse !important;
+        }
+    }
+}
+.list-unstyled::-webkit-scrollbar,
+.clients-items::-webkit-scrollbar,
+.descHide::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+.lastli {
+    margin-top: 16px;
+}
+.lastli img,
+.lastimg {
+    margin-top: 0 !important;
+}
+
+@media (max-width: 767px) {
+    .heroparticles {
+        canvas {
+            min-height: 500px !important;
+            height: 690px !important;
+        }
+    }
+    .hero .heroparticles {
+        height: 700px !important;
+        min-height: 500px !important;
+    }
+    .hero .container .intro h2 {
+        padding-top: 100px !important;
+    }
+}
+.hero {
+    position: relative;
+}
+
+.heroparticles {
+    position: relative;
+    height: 500px;
+}
+
+#tsparticles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

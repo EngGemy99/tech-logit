@@ -1,0 +1,78 @@
+@import "../../../utils/rules.scss";
+
+.companies {
+    position: relative;
+    .span {
+        color: $mainColor;
+    }
+    .order-lg-last img {
+        height: 100%;
+        object-fit: cover;
+        border-radius: 25px;
+        transition: 0.3s ease-in all !important;
+    }
+    .order-lg-last img:hover {
+        transform: scale(1.01);
+    }
+    .row {
+        .section {
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 8%;
+                height: 80%;
+                width: 1px;
+                background-image: url("../../../assets/companies/line.png");
+                z-index: -2;
+            }
+            .card {
+                box-shadow: none;
+                border: none;
+                background-color: transparent;
+                .card-title {
+                    font-size: 26px;
+                    line-height: 24px;
+                    font-weight: 500;
+                    letter-spacing: 1%;
+                    margin-bottom: 14px;
+                    @media (max-width: 992px) {
+                        font-size: 18px !important;
+                        line-height: 16px !important;
+                    }
+                }
+                .img-container {
+                    .icon {
+                        margin-top: 15px;
+                    }
+                }
+
+                .card-text {
+                    font-size: 18px;
+                    line-height: 25px;
+                    font-weight: 400;
+                    letter-spacing: 1%;
+                    color: $greyColor;
+
+                    @media (max-width: 992px) {
+                        font-size: 14px !important;
+                        line-height: 20px !important;
+                    }
+                }
+            }
+        }
+        @media (max-width: 767px) {
+            flex-direction: column-reverse !important;
+        }
+    }
+    @media (max-width: 992px) {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+}
+@media (max-width: 992px) {
+    .img-container {
+        min-width: 73px;
+    }
+}

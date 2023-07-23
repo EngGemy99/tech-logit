@@ -1,0 +1,8 @@
+@import "../../utils/rules.scss";
+h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    span {
+        color: $mainColor;
+    }
+}

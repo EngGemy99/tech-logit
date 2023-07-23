@@ -1,0 +1,259 @@
+@import "../../utils/rules.scss";
+.active .line {
+    background-color: $mainColor !important;
+}
+.show .nav-link {
+    color: $mainColor !important;
+}
+.show .request,
+.show .login,
+.show .signup {
+    margin: 5px 0;
+}
+
+.navbar {
+    background-color: transparent;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99999;
+    transition: all 0.4s;
+
+    .nav-link {
+        color: #fff;
+        opacity: 1;
+        transition: 2s;
+        position: relative;
+        width: max-content;
+
+        .text-black {
+            color: #1f1f1f !important;
+        }
+
+        .text-white {
+            color: #fff;
+        }
+
+        .text-blue {
+            color: $mainColor !important;
+        }
+
+        &.login {
+            padding-right: 0 !important;
+        }
+        &.left::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            transform: scaleX(0);
+            transform-origin: 100% 0;
+            transition: transform 0.4s ease;
+            background-color: $mainColor;
+        }
+    }
+
+    .navbar-nav .nav-link.active,
+    .navbar-nav .nav-link.show,
+    .nav-link:hover,
+    .nav-link:focus {
+        color: $mainColor !important;
+        opacity: 1;
+
+        &.left::after {
+            transform-origin: 0% 0;
+            transform: scaleX(1);
+            width: 100%;
+        }
+    }
+
+    .nav-link.signup,
+    .nav-link.request {
+        border-radius: 30px;
+        color: #fff;
+        font-weight: 500;
+        border: 1.5px solid #fff;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        opacity: 1;
+    }
+
+    .text-main {
+        color: $mainColor !important;
+        border: 1.5px solid $mainColor !important;
+    }
+
+    .nav-link.request {
+        background-color: $mainColor;
+        border: 1.5px solid $mainColor;
+        color: #fff;
+    }
+
+    &.active {
+        background-color: #fff;
+        color: $mainColor;
+
+        .mobile-nav {
+            .left {
+                .request {
+                    background-color: #fff !important;
+                    color: $mainColor !important;
+                }
+            }
+        }
+        .nav-link:not(.request) {
+            border-color: $mainColor;
+            color: $mainColor !important;
+            opacity: 1;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar {
+        li {
+            padding: 8px 0;
+            border-bottom: 1px solid lightgrey;
+        }
+
+        li a {
+            padding-left: 0 !important;
+        }
+
+        .mobile-nav {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            .left {
+                min-width: 210px;
+                justify-content: space-between;
+                .request {
+                    padding: 10px;
+                }
+            }
+
+            .navbar-toggler:focus {
+                box-shadow: none;
+                outline: 0;
+            }
+        }
+
+        .navbar-collapse {
+            .nav-link {
+                transition: 0ms;
+                // background-color: #fff;
+
+                width: 100%;
+
+                &:not(.left) {
+                    text-align: center;
+                    &.login {
+                        border-radius: 20px;
+                    }
+                }
+                &:after {
+                    display: none;
+                }
+            }
+        }
+        .color-main {
+            background-color: $mainColor !important;
+        }
+        .navbar-toggler {
+            position: relative;
+            outline: none;
+            border: 0 !important;
+
+            .navbar-toggler-icon {
+                display: none !important;
+            }
+
+            .line {
+                height: 3px;
+                width: 30px;
+                position: absolute;
+                background-color: #fff;
+                right: 0;
+                transition: all 0.4s ease;
+                transform-origin: 100% 50%;
+            }
+            .line1 {
+                top: 0;
+                margin-top: -4px;
+            }
+
+            .line2 {
+                top: 5px;
+                width: 15px;
+            }
+
+            .line3 {
+                top: 13px;
+            }
+
+            &[aria-expanded="true"] {
+                .line1 {
+                    transform: rotate(-45deg) translateX(3px);
+                }
+
+                .line2 {
+                    display: none !important;
+                }
+
+                .line3 {
+                    transform: rotate(45deg) translateX(3px);
+                }
+            }
+        }
+        &.active {
+            .mobile-nav {
+                .left {
+                    .request {
+                        background-color: #fff;
+                        color: $mainColor;
+                        transition: none;
+                        &:hover {
+                            background-color: #fff;
+                            color: $mainColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.signupBorder {
+    border-radius: 50px;
+    border: 1px solid $mainColor !important;
+    margin-top: 10px;
+    width: fit-content;
+    min-width: 120px;
+    padding: 0 !important;
+    margin: 20px auto 0;
+}
+
+.signupBorder a {
+    font-size: 18px;
+    text-align: center;
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+    .navbar {
+        .navbar-nav {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            .nav-link {
+                width: 100%;
+                font-size: 16px;
+            }
+            .nav-link.left {
+                padding-left: 10px !important;
+                padding-right: 0 !important;
+            }
+        }
+    }
+}

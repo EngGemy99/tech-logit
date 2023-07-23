@@ -1,0 +1,17 @@
+$mainColor: #1b75bc;
+$greyColor: #8a8a8a;
+@mixin mainBtn {
+    background-color: $mainColor;
+    color: #fff;
+    border-radius: 30px;
+    font-weight: 500;
+    border: 1.5px solid $mainColor;
+    &:hover {
+        color: #fff !important;
+    }
+}
+.app__flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
